@@ -2,19 +2,17 @@ const express = require('express');
 
 const app = express();
 
-// Response Redirect
+// JSON Response
 
 app.get('/', (req, res) => {
     res.status(200);
-    res.send('I am Your Home');
-    res.end()
+    res.end('I am Home')
 })
 
-app.get('/header', (req, res) => {
-
-    res.append("SOHAN", "HOSSAIN");
+app.get('/photo', (req, res) => {
     res.status(200);
-    res.send('I am Your Header Writing');
+    res.download('./images/ame.svg');
+    // res.end('Thank You For Download');
 })
 
 app.listen(8000, () => {

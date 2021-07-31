@@ -10,11 +10,14 @@ app.get('/', (req, res) => {
     res.end()
 })
 
-app.get('/header', (req, res) => {
-
-    res.append("SOHAN", "HOSSAIN");
+app.get('/ame', (req, res) => {
     res.status(200);
-    res.send('I am Your Header Writing');
+    res.redirect('http://localhost:8000/sohan');
+})
+
+app.get('/sohan', (req, res) => {
+    res.status(200);
+    res.send('Hello I am Redirect')
 })
 
 app.listen(8000, () => {
