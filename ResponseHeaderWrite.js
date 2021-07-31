@@ -2,7 +2,7 @@ const express = require('express');
 
 const app = express();
 
-// Response Redirect
+// Header Write
 
 app.get('/', (req, res) => {
     res.status(200);
