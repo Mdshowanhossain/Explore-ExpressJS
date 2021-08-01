@@ -2,7 +2,7 @@ const express = require('express');
 
 const app = express();
 
-// Response Redirect
+// Response ClearCookie
 
 app.get('/', (req, res) => {
     res.status(200);
