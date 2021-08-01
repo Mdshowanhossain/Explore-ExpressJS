@@ -1,6 +1,9 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+
 
 const app = express();
+app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
 
@@ -9,12 +12,10 @@ app.get('/', (req, res) => {
     res.end();
 })
 
-app.post('/header', (req, res) => {
+app.post('/formData', (req, res) => {
 
-    const firsHeader = req.header('first');
-    const secondHeader = req.header('second');
-    res.send(firsHeader + " " + secondHeader)
-    res.end();
+    res.status(200);
+
 })
 
 app.listen(8000, () => {

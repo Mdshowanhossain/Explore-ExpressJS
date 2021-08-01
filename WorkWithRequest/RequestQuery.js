@@ -9,6 +9,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/query', (req, res) => {
+    res.status(200);
     const firstQuery = req.query.first
     const secondQuery = req.query.second
     res.send(firstQuery + " " + secondQuery);

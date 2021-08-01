@@ -1,6 +1,9 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+
 
 const app = express();
+app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
 
@@ -9,12 +12,12 @@ app.get('/', (req, res) => {
     res.end();
 })
 
-app.get('/header', (req, res) => {
+app.post('/jsonData', (req, res) => {
+
     res.status(200);
-    const firsHeader = req.header('first');
-    const secondHeader = req.header('second');
-    const host = req.header('host');
-    res.send(firsHeader + " " + secondHeader + " " + host);
+    let jsonData = req.body;
+    const jsonDataStringy = JSON.stringify(jsonData);
+    res.send(jsonDataStringy);
     res.end();
 })
 

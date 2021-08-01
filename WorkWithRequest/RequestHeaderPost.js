@@ -9,13 +9,13 @@ app.get('/', (req, res) => {
     res.end();
 })
 
-app.get('/header', (req, res) => {
+app.post('/header', (req, res) => {
     res.status(200);
-    const firsHeader = req.header('first');
-    const secondHeader = req.header('second');
-    const host = req.header('host');
-    res.send(firsHeader + " " + secondHeader + " " + host);
+    const name = req.header('username');
+    const password = req.header('password');
+    res.send('username:' + " " + name + " " + 'password:' + " " + password);
     res.end();
+
 })
 
 app.listen(8000, () => {

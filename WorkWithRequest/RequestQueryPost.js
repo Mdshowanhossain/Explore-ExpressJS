@@ -9,13 +9,13 @@ app.get('/', (req, res) => {
     res.end();
 })
 
-app.get('/header', (req, res) => {
+app.post('/query', (req, res) => {
     res.status(200);
-    const firsHeader = req.header('first');
-    const secondHeader = req.header('second');
-    const host = req.header('host');
-    res.send(firsHeader + " " + secondHeader + " " + host);
+    const first = req.query.first;
+    const second = req.query.second;
+    res.send(first + ' ' + second)
     res.end();
+
 })
 
 app.listen(8000, () => {
