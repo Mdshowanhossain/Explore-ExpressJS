@@ -13,8 +13,8 @@ app.get('/query', (req, res) => {
     const secondQuery = req.query.second
     res.send(firstQuery + " " + secondQuery);
     res.end();
-
 })
+
 app.listen(8000, () => {
     console.log('I am listening on 8000')
 })
